@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dimnpqykqclni"]
+[gd_scene load_steps=9 format=3 uid="uid://dimnpqykqclni"]
 
 [ext_resource type="Texture2D" uid="uid://ciadth3spr5au" path="res://Assets/backgrounds/6.png" id="1_hy12d"]
 [ext_resource type="Texture2D" uid="uid://dlygqfadi0tnc" path="res://Assets/backgrounds/5.png" id="2_m5fgl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyl7m5goc5q7m" path="res://Assets/backgrounds/2.png" id="5_fe61w"]
 [ext_resource type="Texture2D" uid="uid://ch4wao8ggu12" path="res://Assets/backgrounds/1.png" id="6_0pqtl"]
 [ext_resource type="Texture2D" uid="uid://cu2qj1g0jkt1u" path="res://Assets/backgrounds/0.png" id="7_tyh5m"]
+[ext_resource type="PackedScene" uid="uid://bgkuglnmliuk2" path="res://player.tscn" id="8_m5fgl"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
@@ -51,3 +52,8 @@ motion_mirroring = Vector2(1440, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer7"]
 texture = ExtResource("7_tyh5m")
+
+[node name="CharacterBody2D" parent="ParallaxLayer7" instance=ExtResource("8_m5fgl")]
+position = Vector2(-160, 35)
+
+[node name="Camera2D" type="Camera2D" parent="ParallaxLayer7/CharacterBody2D"]
